@@ -12,9 +12,6 @@ import addRecipeView from './views/addRecipeView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-// if (module.hot) {
-//     module.hot.accept();
-// }
 
 
 
@@ -23,7 +20,7 @@ import 'regenerator-runtime/runtime';
 
 
 ///////////////////////////////////////
-// console.log('test')
+
 const controlRecipes = async function() {
     try {
         const id = window.location.hash.slice(1);
@@ -46,10 +43,9 @@ const controlRecipes = async function() {
         recipeView.render(model.state.recipe);
 
     } catch (err) {
-        // alert(err)
-        // console.log(err);
+
         recipeView.renderError();
-        // recipeView.renderError(`${err}`)
+
     }
 };
 
@@ -141,7 +137,7 @@ const controlAddRecipe = async function(newRecipe) {
         }, MODAL_CLOSE_SEC * 1000);
 
     } catch (err) {
-        console.error('siuuuu', err);
+        // console.error('siuuuu', err);
         addRecipeView.renderError(err.message);
     }
 
